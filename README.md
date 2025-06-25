@@ -206,6 +206,23 @@ npm run build
 npm start
 ```
 
+## 🐛 Known Issues & Fixes
+
+### Fixed Issues ✅
+
+- **Infinite loop in ThemeProvider**: Fixed recursive `setTheme` call that prevented server shutdown
+- **Duplicate imports**: Cleaned up all duplicate import statements across components
+- **Build failures**: Resolved TypeScript compilation errors
+- **Server hanging**: Fixed server not responding to Ctrl+C during `npm run start`
+
+### Current Status
+
+- ✅ Build process works correctly
+- ✅ All components render properly
+- ✅ Theme switching functions correctly
+- ✅ Server shutdown works with Ctrl+C
+- ⚠️ ESLint Next.js plugin warning (cosmetic - linting works fine)
+
 ## 🔖 Version Management
 
 This project uses **automated version management** with:

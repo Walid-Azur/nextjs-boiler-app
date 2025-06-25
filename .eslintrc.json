@@ -1,0 +1,19 @@
+{
+  "extends": ["next/core-web-vitals", "next/typescript"],
+  "rules": {
+    "no-console": ["warn", { "allow": ["warn", "error"] }],
+    "no-debugger": "error",
+    "prefer-const": "error"
+  },
+  "ignorePatterns": [
+    "node_modules/**",
+    ".next/**",
+    "out/**",
+    "dist/**",
+    "build/**",
+    "coverage/**",
+    ".turbo/**",
+    "*.config.js",
+    "*.config.mjs"
+  ]
+}
