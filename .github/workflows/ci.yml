@@ -91,37 +91,34 @@ jobs:
       - name: 📋 Validate Commit Messages
         run: |
           # Get all commits in the PR, excluding merge commits
-          COMMITS=$(git log --pretty=format:"%s" --no-merges origin/main..HEAD)
-
+          git log --pretty=format:"%s" --no-merges origin/main..HEAD > commits.txt
+          
           echo "Validating commit messages:"
-          echo "$COMMITS"
-
-          # Skip validation if no commits found
-          if [ -z "$COMMITS" ]; then
+          cat commits.txt
+          
+          # Check if file is empty
+          if [ ! -s commits.txt ]; then
             echo "ℹ️ No commits to validate"
             exit 0
           fi
-
+          
           # Validate each commit message
-          while IFS= read -r commit; do
+          while read -r commit; do
             # Skip empty lines
             if [ -z "$commit" ]; then
               continue
             fi
             
-            if [[ ! "$commit" =~ ^(feat|fix|docs|style|refactor|perf|test|chore|ci|build|revert)(\(.+\))?: .+ ]]; then
+            # Use grep for pattern matching instead of bash regex
+            if echo "$commit" | grep -qE "^(feat|fix|docs|style|refactor|perf|test|chore|ci|build|revert)(\(.+\))?: .+"; then
+              echo "✅ Valid commit message: '$commit'"
+            else
               echo "❌ Invalid commit message: '$commit'"
               echo "Commit messages must follow conventional commits format:"
               echo "type(scope): description"
-              echo "Examples:"
-              echo "  feat: add new button component"
-              echo "  fix(header): resolve navigation issue"
-              echo "  docs: update README"
               exit 1
-            else
-              echo "✅ Valid commit message: '$commit'"
             fi
-          done <<< "$COMMITS"
+          done < commits.txt
 
   pr-validation:
     name: 🔍 Pull Request Validation
