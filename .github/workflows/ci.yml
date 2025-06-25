@@ -90,14 +90,25 @@ jobs:
 
       - name: 📋 Validate Commit Messages
         run: |
-          # Get all commits in the PR
-          COMMITS=$(git log --pretty=format:"%s" origin/main..HEAD)
+          # Get all commits in the PR, excluding merge commits
+          COMMITS=$(git log --pretty=format:"%s" --no-merges origin/main..HEAD)
 
           echo "Validating commit messages:"
           echo "$COMMITS"
 
+          # Skip validation if no commits found
+          if [ -z "$COMMITS" ]; then
+            echo "ℹ️ No commits to validate"
+            exit 0
+          fi
+
           # Validate each commit message
           while IFS= read -r commit; do
+            # Skip empty lines
+            if [ -z "$commit" ]; then
+              continue
+            fi
+            
             if [[ ! "$commit" =~ ^(feat|fix|docs|style|refactor|perf|test|chore|ci|build|revert)(\(.+\))?: .+ ]]; then
               echo "❌ Invalid commit message: '$commit'"
               echo "Commit messages must follow conventional commits format:"
