@@ -58,7 +58,7 @@
   },
   "lint-staged": {
     "*.{js,jsx,ts,tsx}": [
-      "eslint --fix",
+      "eslint --fix --rule 'no-duplicate-imports: error'",
       "prettier --write"
     ],
     "*.{json,css,md}": [

@@ -3,7 +3,9 @@
   "rules": {
     "no-console": ["warn", { "allow": ["warn", "error"] }],
     "no-debugger": "error",
-    "prefer-const": "error"
+    "prefer-const": "error",
+    "no-duplicate-imports": "error",
+    "import/no-duplicates": "off"
   },
   "ignorePatterns": [
     "node_modules/**",
