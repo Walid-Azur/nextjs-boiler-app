@@ -92,16 +92,16 @@ jobs:
         run: |
           # Get all commits in the PR, excluding merge commits
           git log --pretty=format:"%s" --no-merges origin/main..HEAD > commits.txt
-          
+
           echo "Validating commit messages:"
           cat commits.txt
-          
+
           # Check if file is empty
           if [ ! -s commits.txt ]; then
             echo "ℹ️ No commits to validate"
             exit 0
           fi
-          
+
           # Validate each commit message
           while read -r commit; do
             # Skip empty lines
