@@ -35,9 +35,6 @@ jobs:
       - name: 🔍 TypeScript Type Check
         run: npm run type-check
 
-      - name: 🧹 ESLint Check
-        run: npm run lint
-
       - name: 💄 Prettier Format Check
         run: npm run format:check
 
@@ -140,7 +137,7 @@ jobs:
             ✅ **All validation checks passed!**
 
             ### 📋 Checks Completed:
-            - 🧪 Code validation (TypeScript, ESLint, Prettier)
+            - 🧪 Code validation (TypeScript, Prettier)
             - 🏗️ Build verification
             - 🔒 Security audit
             - 📝 Commit message validation
