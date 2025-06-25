@@ -1,43 +1,63 @@
+import { Footer } from "@/components/layout/footer";
 import { Header } from "@/components/layout/header";
 import { Sidebar } from "@/components/layout/sidebar";
-import { Footer } from "@/components/layout/footer";
-import { Button } from "@/components/ui/button";
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { Star, Heart, Download, Zap, Shield, Palette } from "lucide-react";
+import { Button } from "@/components/ui/button";
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
+import { Download, Heart, Palette, Shield, Star, Zap } from "lucide-react";
+import { Footer } from "@/components/layout/footer";
+import { Header } from "@/components/layout/header";
+import { Sidebar } from "@/components/layout/sidebar";
+import { Badge } from "@/components/ui/badge";
+import { Button } from "@/components/ui/button";
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
+import { Download, Heart, Palette, Shield, Star, Zap } from "lucide-react";
 
 export default function Home() {
   return (
-    <div className="min-h-screen flex flex-col">
+    <div className="flex min-h-screen flex-col">
       <Header />
-      
+
       <div className="flex flex-1">
         <aside className="hidden lg:block">
           <Sidebar />
         </aside>
-        
+
         <main className="flex-1">
           {/* Hero Section */}
-          <section className="bg-gradient-to-br from-primary/10 via-secondary/5 to-background py-24 px-4">
+          <section className="from-primary/10 via-secondary/5 to-background bg-gradient-to-br px-4 py-24">
             <div className="container mx-auto max-w-4xl text-center">
-              <div className="inline-flex items-center rounded-full border px-4 py-2 text-sm mb-6">
-                <Zap className="w-4 h-4 mr-2 text-primary" />
+              <div className="mb-6 inline-flex items-center rounded-full border px-4 py-2 text-sm">
+                <Zap className="text-primary mr-2 h-4 w-4" />
                 Modern Design System
               </div>
-              <h1 className="text-5xl font-bold mb-6 bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
+              <h1 className="from-primary to-secondary mb-6 bg-gradient-to-r bg-clip-text text-5xl font-bold text-transparent">
                 Build Beautiful Interfaces
               </h1>
-              <p className="text-xl text-muted-foreground mb-8 max-w-2xl mx-auto">
-                A comprehensive design system built with Next.js 15, Tailwind CSS 4, and modern best practices. 
-                Orange and yellow color palette with dark/light mode support.
+              <p className="text-muted-foreground mx-auto mb-8 max-w-2xl text-xl">
+                A comprehensive design system built with Next.js 15, Tailwind
+                CSS 4, and modern best practices. Orange and yellow color
+                palette with dark/light mode support.
               </p>
-              <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <Button size="lg" className="text-lg px-8">
-                  <Download className="w-5 h-5 mr-2" />
+              <div className="flex flex-col justify-center gap-4 sm:flex-row">
+                <Button size="lg" className="px-8 text-lg">
+                  <Download className="mr-2 h-5 w-5" />
                   Get Started
                 </Button>
-                <Button variant="outline" size="lg" className="text-lg px-8">
-                  <Star className="w-5 h-5 mr-2" />
+                <Button variant="outline" size="lg" className="px-8 text-lg">
+                  <Star className="mr-2 h-5 w-5" />
                   View on GitHub
                 </Button>
               </div>
@@ -45,21 +65,24 @@ export default function Home() {
           </section>
 
           {/* Components Section */}
-          <section id="components" className="py-16 px-4">
+          <section id="components" className="px-4 py-16">
             <div className="container mx-auto max-w-6xl">
-              <div className="text-center mb-12">
-                <h2 className="text-3xl font-bold mb-4">Components</h2>
-                <p className="text-muted-foreground max-w-2xl mx-auto">
-                  Beautifully designed components built with Tailwind CSS 4 and modern React patterns.
+              <div className="mb-12 text-center">
+                <h2 className="mb-4 text-3xl font-bold">Components</h2>
+                <p className="text-muted-foreground mx-auto max-w-2xl">
+                  Beautifully designed components built with Tailwind CSS 4 and
+                  modern React patterns.
                 </p>
               </div>
-              
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+
+              <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
                 {/* Button Examples */}
                 <Card>
                   <CardHeader>
                     <CardTitle>Buttons</CardTitle>
-                    <CardDescription>Various button variants and sizes</CardDescription>
+                    <CardDescription>
+                      Various button variants and sizes
+                    </CardDescription>
                   </CardHeader>
                   <CardContent className="space-y-3">
                     <div className="flex flex-wrap gap-2">
@@ -84,7 +107,9 @@ export default function Home() {
                 <Card>
                   <CardHeader>
                     <CardTitle>Badges</CardTitle>
-                    <CardDescription>Status indicators and labels</CardDescription>
+                    <CardDescription>
+                      Status indicators and labels
+                    </CardDescription>
                   </CardHeader>
                   <CardContent className="space-y-3">
                     <div className="flex flex-wrap gap-2">
@@ -104,7 +129,9 @@ export default function Home() {
                 <Card variant="elevated">
                   <CardHeader>
                     <CardTitle>Cards</CardTitle>
-                    <CardDescription>Container components for content</CardDescription>
+                    <CardDescription>
+                      Container components for content
+                    </CardDescription>
                   </CardHeader>
                   <CardContent>
                     <div className="space-y-3">
@@ -122,38 +149,41 @@ export default function Home() {
           </section>
 
           {/* Typography Section */}
-          <section id="typography" className="py-16 px-4 bg-muted/30">
+          <section id="typography" className="bg-muted/30 px-4 py-16">
             <div className="container mx-auto max-w-4xl">
-              <div className="text-center mb-12">
-                <h2 className="text-3xl font-bold mb-4">Typography</h2>
+              <div className="mb-12 text-center">
+                <h2 className="mb-4 text-3xl font-bold">Typography</h2>
                 <p className="text-muted-foreground">
                   Clean and readable typography using Inter font family.
                 </p>
               </div>
-              
+
               <Card>
                 <CardContent className="space-y-8">
                   <div>
-                    <h1 className="text-4xl font-bold mb-2">Heading 1</h1>
-                    <h2 className="text-3xl font-bold mb-2">Heading 2</h2>
-                    <h3 className="text-2xl font-bold mb-2">Heading 3</h3>
-                    <h4 className="text-xl font-bold mb-2">Heading 4</h4>
-                    <h5 className="text-lg font-bold mb-2">Heading 5</h5>
+                    <h1 className="mb-2 text-4xl font-bold">Heading 1</h1>
+                    <h2 className="mb-2 text-3xl font-bold">Heading 2</h2>
+                    <h3 className="mb-2 text-2xl font-bold">Heading 3</h3>
+                    <h4 className="mb-2 text-xl font-bold">Heading 4</h4>
+                    <h5 className="mb-2 text-lg font-bold">Heading 5</h5>
                     <h6 className="text-base font-bold">Heading 6</h6>
                   </div>
-                  
+
                   <div>
                     <p className="mb-4">
-                      This is a paragraph with <strong>bold text</strong>, <em>italic text</em>, and <u>underlined text</u>.
-                      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                      This is a paragraph with <strong>bold text</strong>,{" "}
+                      <em>italic text</em>, and <u>underlined text</u>. Lorem
+                      ipsum dolor sit amet, consectetur adipiscing elit. Sed do
+                      eiusmod tempor incididunt ut labore et dolore magna
+                      aliqua.
                     </p>
                     <p className="text-muted-foreground">
                       This is muted text that provides secondary information.
                     </p>
                   </div>
-                  
+
                   <div>
-                    <code className="bg-muted px-2 py-1 rounded text-sm font-mono">
+                    <code className="bg-muted rounded px-2 py-1 font-mono text-sm">
                       const greeting = &quot;Hello, World!&quot;;
                     </code>
                   </div>
@@ -163,37 +193,37 @@ export default function Home() {
           </section>
 
           {/* Colors Section */}
-          <section id="colors" className="py-16 px-4">
+          <section id="colors" className="px-4 py-16">
             <div className="container mx-auto max-w-4xl">
-              <div className="text-center mb-12">
-                <h2 className="text-3xl font-bold mb-4">Color Palette</h2>
+              <div className="mb-12 text-center">
+                <h2 className="mb-4 text-3xl font-bold">Color Palette</h2>
                 <p className="text-muted-foreground">
                   Orange and yellow primary colors with semantic color tokens.
                 </p>
               </div>
-              
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+
+              <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
                 {/* Primary Colors */}
                 <Card>
                   <CardHeader>
                     <CardTitle className="flex items-center gap-2">
-                      <Palette className="w-5 h-5" />
+                      <Palette className="h-5 w-5" />
                       Primary Colors
                     </CardTitle>
                   </CardHeader>
                   <CardContent className="space-y-3">
                     <div className="flex items-center gap-3">
-                      <div className="w-12 h-12 rounded-lg bg-primary border"></div>
+                      <div className="bg-primary h-12 w-12 rounded-lg border"></div>
                       <div>
                         <p className="font-medium">Primary</p>
-                        <p className="text-sm text-muted-foreground">Orange</p>
+                        <p className="text-muted-foreground text-sm">Orange</p>
                       </div>
                     </div>
                     <div className="flex items-center gap-3">
-                      <div className="w-12 h-12 rounded-lg bg-secondary border"></div>
+                      <div className="bg-secondary h-12 w-12 rounded-lg border"></div>
                       <div>
                         <p className="font-medium">Secondary</p>
-                        <p className="text-sm text-muted-foreground">Yellow</p>
+                        <p className="text-muted-foreground text-sm">Yellow</p>
                       </div>
                     </div>
                   </CardContent>
@@ -206,17 +236,21 @@ export default function Home() {
                   </CardHeader>
                   <CardContent className="space-y-3">
                     <div className="flex items-center gap-3">
-                      <div className="w-12 h-12 rounded-lg bg-destructive border"></div>
+                      <div className="bg-destructive h-12 w-12 rounded-lg border"></div>
                       <div>
                         <p className="font-medium">Destructive</p>
-                        <p className="text-sm text-muted-foreground">Error states</p>
+                        <p className="text-muted-foreground text-sm">
+                          Error states
+                        </p>
                       </div>
                     </div>
                     <div className="flex items-center gap-3">
-                      <div className="w-12 h-12 rounded-lg bg-muted border"></div>
+                      <div className="bg-muted h-12 w-12 rounded-lg border"></div>
                       <div>
                         <p className="font-medium">Muted</p>
-                        <p className="text-sm text-muted-foreground">Subtle backgrounds</p>
+                        <p className="text-muted-foreground text-sm">
+                          Subtle backgrounds
+                        </p>
                       </div>
                     </div>
                   </CardContent>
@@ -226,42 +260,46 @@ export default function Home() {
           </section>
 
           {/* Features Section */}
-          <section className="py-16 px-4 bg-muted/30">
+          <section className="bg-muted/30 px-4 py-16">
             <div className="container mx-auto max-w-6xl">
-              <div className="text-center mb-12">
-                <h2 className="text-3xl font-bold mb-4">Features</h2>
-                <p className="text-muted-foreground max-w-2xl mx-auto">
-                  Everything you need to build modern, accessible, and beautiful user interfaces.
+              <div className="mb-12 text-center">
+                <h2 className="mb-4 text-3xl font-bold">Features</h2>
+                <p className="text-muted-foreground mx-auto max-w-2xl">
+                  Everything you need to build modern, accessible, and beautiful
+                  user interfaces.
                 </p>
               </div>
-              
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+
+              <div className="grid grid-cols-1 gap-6 md:grid-cols-3">
                 <Card>
                   <CardHeader>
-                    <Zap className="w-12 h-12 text-primary mb-4" />
+                    <Zap className="text-primary mb-4 h-12 w-12" />
                     <CardTitle>Lightning Fast</CardTitle>
                     <CardDescription>
-                      Built with Next.js 15 and Turbopack for the fastest development experience.
+                      Built with Next.js 15 and Turbopack for the fastest
+                      development experience.
                     </CardDescription>
                   </CardHeader>
                 </Card>
-                
+
                 <Card>
                   <CardHeader>
-                    <Shield className="w-12 h-12 text-primary mb-4" />
+                    <Shield className="text-primary mb-4 h-12 w-12" />
                     <CardTitle>Type Safe</CardTitle>
                     <CardDescription>
-                      Full TypeScript support with strict typing for better developer experience.
+                      Full TypeScript support with strict typing for better
+                      developer experience.
                     </CardDescription>
                   </CardHeader>
                 </Card>
-                
+
                 <Card>
                   <CardHeader>
-                    <Heart className="w-12 h-12 text-primary mb-4" />
+                    <Heart className="text-primary mb-4 h-12 w-12" />
                     <CardTitle>Accessible</CardTitle>
                     <CardDescription>
-                      Built with accessibility in mind, following WCAG guidelines and best practices.
+                      Built with accessibility in mind, following WCAG
+                      guidelines and best practices.
                     </CardDescription>
                   </CardHeader>
                 </Card>
@@ -270,7 +308,7 @@ export default function Home() {
           </section>
         </main>
       </div>
-      
+
       <Footer />
     </div>
   );

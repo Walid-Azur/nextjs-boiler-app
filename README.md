@@ -1,6 +1,7 @@
 # Modern Design System
 
-A comprehensive design system built with **Next.js 15**, **Tailwind CSS 4**, and modern best practices. Features an orange and yellow color palette with full dark/light mode support.
+A comprehensive design system built with **Next.js 15**, **Tailwind CSS 4**, and modern best
+practices. Features an orange and yellow color palette with full dark/light mode support.
 
 ## 🚀 Features
 
@@ -17,6 +18,7 @@ A comprehensive design system built with **Next.js 15**, **Tailwind CSS 4**, and
 ## 🎨 Design Tokens
 
 ### Color Palette
+
 - **Primary**: Orange (#FFA500)
 - **Secondary**: Yellow (#FFC107)
 - **Destructive**: Red (#EF4444)
@@ -24,6 +26,7 @@ A comprehensive design system built with **Next.js 15**, **Tailwind CSS 4**, and
 - **Background**: White/Dark with semantic tokens
 
 ### Typography
+
 - **Font Family**: Inter (Google Fonts)
 - **Font Weights**: 400, 500, 600, 700
 - **Responsive Scale**: Mobile-first with proper line heights
@@ -31,6 +34,7 @@ A comprehensive design system built with **Next.js 15**, **Tailwind CSS 4**, and
 ## 🏗️ Architecture
 
 ### Layout Structure
+
 ```
 src/
 ├── app/
@@ -53,6 +57,7 @@ src/
 ```
 
 ### Component System
+
 - **Button**: 6 variants (default, secondary, outline, destructive, ghost, link)
 - **Card**: 3 variants (default, elevated, outlined)
 - **Badge**: 4 variants (default, secondary, destructive, outline)
@@ -61,30 +66,34 @@ src/
 ## 🛠️ Getting Started
 
 1. **Install dependencies:**
+
    ```bash
    npm install
    ```
 
 2. **Run development server:**
+
    ```bash
    npm run dev
    ```
 
-3. **Open browser:**
-   Navigate to [http://localhost:3000](http://localhost:3000)
+3. **Open browser:** Navigate to [http://localhost:3000](http://localhost:3000)
 
 ## 📦 Dependencies
 
 ### Core
+
 - `next`: 15.3.4
 - `react`: 19.0.0
 - `typescript`: 5.x
 
 ### Styling
+
 - `tailwindcss`: 4.x
 - `@tailwindcss/postcss`: 4.x
 
 ### UI & Icons
+
 - `@headlessui/react`: Unstyled accessible components
 - `@heroicons/react`: SVG icon library
 - `lucide-react`: Modern icon library
@@ -94,6 +103,7 @@ src/
 ## 🎯 Usage Examples
 
 ### Button Component
+
 ```tsx
 import { Button } from "@/components/ui/button";
 
@@ -107,28 +117,28 @@ import { Button } from "@/components/ui/button";
 ```
 
 ### Card Component
+
 ```tsx
-import { Card, CardHeader, CardTitle, CardContent } from "@/components/ui/card";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 
 <Card variant="elevated">
   <CardHeader>
     <CardTitle>Card Title</CardTitle>
   </CardHeader>
-  <CardContent>
-    Card content goes here
-  </CardContent>
-</Card>
+  <CardContent>Card content goes here</CardContent>
+</Card>;
 ```
 
 ### Theme Toggle
+
 ```tsx
+import { useTheme } from "@/app/providers/theme-provider";
 import { useTheme } from "@/app/providers/theme-provider";
 
 const { theme, setTheme } = useTheme();
 
-<button onClick={() => setTheme(theme === "dark" ? "light" : "dark")}>
-  Toggle Theme
-</button>
+<button onClick={() => setTheme(theme === "dark" ? "light" : "dark")}>Toggle Theme</button>;
 ```
 
 ## 🌈 Color Usage
@@ -137,14 +147,14 @@ Colors are defined as CSS custom properties and can be used with Tailwind classe
 
 ```css
 /* Light mode */
---primary: 255 165 0;        /* Orange */
---secondary: 255 193 7;      /* Yellow */
---background: 255 255 255;   /* White */
+--primary: 255 165 0; /* Orange */
+--secondary: 255 193 7; /* Yellow */
+--background: 255 255 255; /* White */
 
 /* Dark mode */
---primary: 255 165 0;        /* Orange (same) */
---secondary: 255 193 7;      /* Yellow (same) */
---background: 10 10 10;      /* Dark */
+--primary: 255 165 0; /* Orange (same) */
+--secondary: 255 193 7; /* Yellow (same) */
+--background: 10 10 10; /* Dark */
 ```
 
 ```tsx
@@ -160,11 +170,13 @@ Colors are defined as CSS custom properties and can be used with Tailwind classe
 ## 🔧 Customization
 
 ### Adding New Colors
+
 1. Update CSS custom properties in `globals.css`
 2. Add corresponding Tailwind classes in `@theme inline`
 3. Update TypeScript types if needed
 
 ### Creating New Components
+
 1. Create component file in `src/components/ui/`
 2. Add variant definitions in `src/lib/utils.ts`
 3. Export from component file
@@ -172,6 +184,7 @@ Colors are defined as CSS custom properties and can be used with Tailwind classe
 ## 📱 Responsive Design
 
 The design system follows mobile-first principles:
+
 - Mobile: `sm:` (640px+)
 - Tablet: `md:` (768px+)
 - Desktop: `lg:` (1024px+)
@@ -199,4 +212,4 @@ MIT License - feel free to use in your projects!
 
 ---
 
-*Built with ❤️ using Next.js 15 and Tailwind CSS 4*
+_Built with ❤️ using Next.js 15 and Tailwind CSS 4_

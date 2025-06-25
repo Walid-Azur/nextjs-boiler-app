@@ -11,7 +11,8 @@ const inter = Inter({
 
 export const metadata: Metadata = {
   title: "Modern Design System",
-  description: "A modern design system built with Next.js 15 and Tailwind CSS 4",
+  description:
+    "A modern design system built with Next.js 15 and Tailwind CSS 4",
 };
 
 export default function RootLayout({
@@ -22,9 +23,7 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <body className={`${inter.variable} font-sans antialiased`}>
-        <ThemeProvider>
-          {children}
-        </ThemeProvider>
+        <ThemeProvider>{children}</ThemeProvider>
       </body>
     </html>
   );
