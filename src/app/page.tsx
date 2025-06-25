@@ -11,19 +11,6 @@ import {
   CardTitle,
 } from "@/components/ui/card";
 import { Download, Heart, Palette, Shield, Star, Zap } from "lucide-react";
-import { Footer } from "@/components/layout/footer";
-import { Header } from "@/components/layout/header";
-import { Sidebar } from "@/components/layout/sidebar";
-import { Badge } from "@/components/ui/badge";
-import { Button } from "@/components/ui/button";
-import {
-  Card,
-  CardContent,
-  CardDescription,
-  CardHeader,
-  CardTitle,
-} from "@/components/ui/card";
-import { Download, Heart, Palette, Shield, Star, Zap } from "lucide-react";
 
 export default function Home() {
   return (

@@ -1,6 +1,5 @@
 import React from "react";
 import { cardVariants, cn } from "@/lib/utils";
-import { cardVariants, cn } from "@/lib/utils";
 
 interface CardProps extends React.HTMLAttributes<HTMLDivElement> {
   variant?: keyof typeof cardVariants.variant;

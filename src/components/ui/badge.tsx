@@ -1,6 +1,5 @@
 import React from "react";
 import { badgeVariants, cn } from "@/lib/utils";
-import { badgeVariants, cn } from "@/lib/utils";
 
 interface BadgeProps extends React.HTMLAttributes<HTMLDivElement> {
   variant?: keyof typeof badgeVariants.variant;

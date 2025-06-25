@@ -2,8 +2,6 @@
 
 import { cn } from "@/lib/utils";
 import { Component, Home, Layout, Palette, Type } from "lucide-react";
-import { cn } from "@/lib/utils";
-import { Component, Home, Layout, Palette, Type } from "lucide-react";
 
 const sidebarItems = [
   {

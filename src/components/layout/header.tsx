@@ -3,8 +3,6 @@
 import { useState } from "react";
 import { useTheme } from "@/app/providers/theme-provider";
 import { Menu, Moon, Sun, X } from "lucide-react";
-import { useTheme } from "@/app/providers/theme-provider";
-import { Menu, Moon, Sun, X } from "lucide-react";
 
 export function Header() {
   const { theme, setTheme } = useTheme();
