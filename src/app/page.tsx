@@ -106,8 +106,12 @@ export default function Home() {
                     </div>
                     <div className="flex flex-wrap gap-2">
                       <Badge variant="destructive">Error</Badge>
-                      <Badge className="bg-success text-success-foreground">Success</Badge>
-                      <Badge className="bg-info text-info-foreground">Info</Badge>
+                      <Badge className="bg-success text-success-foreground">
+                        Success
+                      </Badge>
+                      <Badge className="bg-info text-info-foreground">
+                        Info
+                      </Badge>
                     </div>
                   </CardContent>
                 </Card>
