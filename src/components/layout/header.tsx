@@ -26,7 +26,8 @@ export function Header() {
         {/* Logo */}
         {/* Logo */}
         <a href="/" className="flex items-center space-x-2">
-          <div className="from-primary to-secondary h-8 w-8 rounded-lg bg-gradient-to-br"></div>
+          {/* Using a regular img tag for the logo */}
+          <img src="/logo.png" alt="Design System Logo" className="h-8 w-8" width={32} height={32} />
           <span className="text-xl font-bold">Design System</span>
         </a>
 

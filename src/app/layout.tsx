@@ -13,6 +13,9 @@ export const metadata: Metadata = {
   title: "Modern Design System",
   description:
     "A modern design system built with Next.js 15 and Tailwind CSS 4",
+  icons: {
+    icon: "/favicon.png",
+  },
 };
 
 export default function RootLayout({
