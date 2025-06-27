@@ -11,19 +11,6 @@ import {
   CardTitle,
 } from "@/components/ui/card";
 import { Download, Heart, Palette, Shield, Star, Zap } from "lucide-react";
-import { Footer } from "@/components/layout/footer";
-import { Header } from "@/components/layout/header";
-import { Sidebar } from "@/components/layout/sidebar";
-import { Badge } from "@/components/ui/badge";
-import { Button } from "@/components/ui/button";
-import {
-  Card,
-  CardContent,
-  CardDescription,
-  CardHeader,
-  CardTitle,
-} from "@/components/ui/card";
-import { Download, Heart, Palette, Shield, Star, Zap } from "lucide-react";
 
 export default function Home() {
   return (
@@ -48,8 +35,8 @@ export default function Home() {
               </h1>
               <p className="text-muted-foreground mx-auto mb-8 max-w-2xl text-xl">
                 A comprehensive design system built with Next.js 15, Tailwind
-                CSS 4, and modern best practices. Orange and yellow color
-                palette with dark/light mode support.
+                CSS 4, and modern best practices. Green and yellow color palette
+                with dark/light mode support.
               </p>
               <div className="flex flex-col justify-center gap-4 sm:flex-row">
                 <Button size="lg" className="px-8 text-lg">
@@ -119,8 +106,12 @@ export default function Home() {
                     </div>
                     <div className="flex flex-wrap gap-2">
                       <Badge variant="destructive">Error</Badge>
-                      <Badge className="bg-green-500 text-white">Success</Badge>
-                      <Badge className="bg-blue-500 text-white">Info</Badge>
+                      <Badge className="bg-success text-success-foreground">
+                        Success
+                      </Badge>
+                      <Badge className="bg-info text-info-foreground">
+                        Info
+                      </Badge>
                     </div>
                   </CardContent>
                 </Card>
@@ -198,7 +189,7 @@ export default function Home() {
               <div className="mb-12 text-center">
                 <h2 className="mb-4 text-3xl font-bold">Color Palette</h2>
                 <p className="text-muted-foreground">
-                  Orange and yellow primary colors with semantic color tokens.
+                  Green and yellow primary colors with semantic color tokens.
                 </p>
               </div>
 
@@ -216,7 +207,7 @@ export default function Home() {
                       <div className="bg-primary h-12 w-12 rounded-lg border"></div>
                       <div>
                         <p className="font-medium">Primary</p>
-                        <p className="text-muted-foreground text-sm">Orange</p>
+                        <p className="text-muted-foreground text-sm">Green</p>
                       </div>
                     </div>
                     <div className="flex items-center gap-3">

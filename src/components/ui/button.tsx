@@ -1,6 +1,5 @@
 import React from "react";
 import { buttonVariants, cn } from "@/lib/utils";
-import { buttonVariants, cn } from "@/lib/utils";
 
 interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
   variant?: keyof typeof buttonVariants.variant;

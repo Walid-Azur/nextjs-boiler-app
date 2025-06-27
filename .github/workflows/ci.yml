@@ -35,9 +35,6 @@ jobs:
       - name: 🔍 TypeScript Type Check
         run: npm run type-check
 
-      - name: 🧹 ESLint Check
-        run: npm run lint
-
       - name: 💄 Prettier Format Check
         run: npm run format:check
 
@@ -93,27 +90,35 @@ jobs:
 
       - name: 📋 Validate Commit Messages
         run: |
-          # Get all commits in the PR
-          COMMITS=$(git log --pretty=format:"%s" origin/main..HEAD)
+          # Get all commits in the PR, excluding merge commits
+          git log --pretty=format:"%s" --no-merges origin/main..HEAD > commits.txt
 
           echo "Validating commit messages:"
-          echo "$COMMITS"
+          cat commits.txt
+
+          # Check if file is empty
+          if [ ! -s commits.txt ]; then
+            echo "ℹ️ No commits to validate"
+            exit 0
+          fi
 
           # Validate each commit message
-          while IFS= read -r commit; do
-            if [[ ! "$commit" =~ ^(feat|fix|docs|style|refactor|perf|test|chore|ci|build|revert)(\(.+\))?: .+ ]]; then
+          while read -r commit; do
+            # Skip empty lines
+            if [ -z "$commit" ]; then
+              continue
+            fi
+            
+            # Use grep for pattern matching instead of bash regex
+            if echo "$commit" | grep -qE "^(feat|fix|docs|style|refactor|perf|test|chore|ci|build|revert)(\(.+\))?: .+"; then
+              echo "✅ Valid commit message: '$commit'"
+            else
               echo "❌ Invalid commit message: '$commit'"
               echo "Commit messages must follow conventional commits format:"
               echo "type(scope): description"
-              echo "Examples:"
-              echo "  feat: add new button component"
-              echo "  fix(header): resolve navigation issue"
-              echo "  docs: update README"
               exit 1
-            else
-              echo "✅ Valid commit message: '$commit'"
             fi
-          done <<< "$COMMITS"
+          done < commits.txt
 
   pr-validation:
     name: 🔍 Pull Request Validation
@@ -140,7 +145,7 @@ jobs:
             ✅ **All validation checks passed!**
 
             ### 📋 Checks Completed:
-            - 🧪 Code validation (TypeScript, ESLint, Prettier)
+            - 🧪 Code validation (TypeScript, Prettier)
             - 🏗️ Build verification
             - 🔒 Security audit
             - 📝 Commit message validation

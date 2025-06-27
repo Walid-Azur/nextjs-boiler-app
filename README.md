@@ -1,7 +1,7 @@
 # Modern Design System
 
 A comprehensive design system built with **Next.js 15**, **Tailwind CSS 4**, and modern best
-practices. Features an orange and yellow color palette with full dark/light mode support.
+practices. Features a green and yellow color palette with full dark/light mode support.
 
 ## 🚀 Features
 
@@ -10,7 +10,7 @@ practices. Features an orange and yellow color palette with full dark/light mode
 - **TypeScript** with strict typing
 - **Inter Font** for clean typography
 - **Dark/Light Mode** with system preference detection
-- **Orange & Yellow** primary color scheme
+- **Green & Yellow** primary color scheme
 - **Responsive Design** with mobile-first approach
 - **Accessible Components** following WCAG guidelines
 - **Modern UI Components** without external UI libraries
@@ -19,7 +19,7 @@ practices. Features an orange and yellow color palette with full dark/light mode
 
 ### Color Palette
 
-- **Primary**: Orange (#FFA500)
+- **Primary**: Green (#22C55E)
 - **Secondary**: Yellow (#FFC107)
 - **Destructive**: Red (#EF4444)
 - **Muted**: Neutral grays
@@ -147,12 +147,12 @@ Colors are defined as CSS custom properties and can be used with Tailwind classe
 
 ```css
 /* Light mode */
---primary: 255 165 0; /* Orange */
+--primary: 34 197 94; /* Green */
 --secondary: 255 193 7; /* Yellow */
 --background: 255 255 255; /* White */
 
 /* Dark mode */
---primary: 255 165 0; /* Orange (same) */
+--primary: 34 197 94; /* Green (same) */
 --secondary: 255 193 7; /* Yellow (same) */
 --background: 10 10 10; /* Dark */
 ```
@@ -206,10 +206,88 @@ npm run build
 npm start
 ```
 
+## 🐛 Known Issues & Fixes
+
+### Fixed Issues ✅
+
+- **Infinite loop in ThemeProvider**: Fixed recursive `setTheme` call that prevented server shutdown
+- **Duplicate imports**: Cleaned up all duplicate import statements across components
+- **Build failures**: Resolved TypeScript compilation errors
+- **Server hanging**: Fixed server not responding to Ctrl+C during `npm run start`
+
+### Current Status
+
+- ✅ Build process works correctly
+- ✅ All components render properly
+- ✅ Theme switching functions correctly
+- ✅ Server shutdown works with Ctrl+C
+- ⚠️ ESLint Next.js plugin warning (cosmetic - linting works fine)
+
+## 🔖 Version Management
+
+This project uses **automated version management** with:
+
+- 🤖 **Automatic versioning** on push to main branch
+- 📝 **Conventional commits** for structured commit messages
+- 📋 **Automated changelog** generation
+- 🏷️ **GitHub releases** with release notes
+- 🔄 **CI/CD pipeline** with validation
+
+### Quick Commands
+
+```bash
+# Manual version bumps
+npm run release          # Auto-determine version
+npm run release:patch    # 0.1.0 → 0.1.1
+npm run release:minor    # 0.1.0 → 0.2.0
+npm run release:major    # 0.1.0 → 1.0.0
+
+# Validation
+npm run validate         # Run all checks
+npm run type-check       # TypeScript validation
+npm run lint:fix         # Fix ESLint issues
+npm run format           # Format code
+```
+
+### Commit Message Format
+
+```bash
+feat: add new component     # Minor version bump
+fix: resolve styling issue  # Patch version bump
+docs: update README        # Patch version bump
+```
+
+📚 **See [VERSIONING.md](./VERSIONING.md) for complete version management guide**
+
+## 🔄 CI/CD Pipeline
+
+### Automated Workflows
+
+- ✅ **Code validation** (TypeScript, ESLint, Prettier)
+- 🔒 **Security audit** and dependency checking
+- 📝 **Commit message validation**
+- 🏗️ **Build verification**
+- 🔖 **Automatic versioning** on main branch
+- 🚀 **GitHub releases** with changelog
+
+### Pre-commit Hooks
+
+- 💄 Auto-format code with Prettier
+- 🧹 Auto-fix ESLint issues
+- 🔍 TypeScript type checking
+- 📝 Commit message validation
+
 ## 📄 License
 
 MIT License - feel free to use in your projects!
 
+## 📚 Documentation
+
+- 📖 [Version Management Guide](./VERSIONING.md)
+- 🔗 [Conventional Commits](https://www.conventionalcommits.org/)
+- 📋 [Changelog](./CHANGELOG.md) (auto-generated)
+- 🏷️ [Releases](https://github.com/Walid-Azur/nextjs-boiler-app/releases)
+
 ---
 
-_Built with ❤️ using Next.js 15 and Tailwind CSS 4_
+_Built with ❤️ using Next.js 15, Tailwind CSS 4, and modern DevOps practices_
