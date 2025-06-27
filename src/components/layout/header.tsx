@@ -1,28 +1,34 @@
 "use client";
 
-import { useState } from "react";
 import { useTheme } from "@/app/providers/theme-provider";
 import { Menu, Moon, Sun, X } from "lucide-react";
+import { useState } from "react";
 
 export function Header() {
   const { theme, setTheme } = useTheme();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const navigation = [
-    { name: "Home", href: "#" },
+    { name: "Home", href: "/" },
     { name: "Components", href: "#components" },
     { name: "Typography", href: "#typography" },
     { name: "Colors", href: "#colors" },
+    { name: "Demo", href: "/demo" },
+    { name: "UI Blocks", href: "/ui-blocks/application-shells/multi-column" },
+    { name: "Hero Section (UI)", href: "/ui-blocks/marketing/hero-section" },
+    { name: "Features (UI)", href: "/ui-blocks/marketing/features-section" },
+    { name: "Data Table (UI)", href: "/ui-blocks/complex/data-table" },
   ];
 
   return (
     <header className="bg-background/95 supports-[backdrop-filter]:bg-background/60 sticky top-0 z-50 w-full border-b backdrop-blur">
       <div className="container mx-auto flex h-16 max-w-screen-2xl items-center justify-between px-4">
         {/* Logo */}
-        <div className="flex items-center space-x-2">
+        {/* Logo */}
+        <a href="/" className="flex items-center space-x-2">
           <div className="from-primary to-secondary h-8 w-8 rounded-lg bg-gradient-to-br"></div>
           <span className="text-xl font-bold">Design System</span>
-        </div>
+        </a>
 
         {/* Desktop Navigation */}
         <nav className="hidden items-center space-x-6 md:flex">
